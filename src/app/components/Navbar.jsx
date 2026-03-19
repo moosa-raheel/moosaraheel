@@ -18,7 +18,13 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const navbarRef = useRef();
   useEffect(() => {
-    navbarRef.current.classList.toggle("translate-x-full");
+    if (show) {
+      navbarRef.current.classList.add("-translate-x-full");
+      document.documentElement.style.overflowY = "hidden";
+    } else {
+      navbarRef.current.classList.remove("-translate-x-full");
+      document.documentElement.style.overflowY = "auto";
+    }
   }, [show]);
   const pathname = usePathname();
   const handleNav = () => {
@@ -40,7 +46,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a href="">About</a>
+            <Link
+              href="/about"
+              className={pathname == "/about" ? "border-b py-1" : ""}
+            >
+              About
+            </Link>
           </li>
           <li>
             <a href="">Projects</a>
@@ -68,22 +79,27 @@ const Navbar = () => {
         </div>
       </nav>
       <div
-        className="navbar w-full h-screen bg-black fixed top-0 left-0 lg:hidden  transition-all duration-800 z-900"
+        className="navbar w-full h-screen bg-black fixed top-0 left-full lg:hidden  transition-all duration-500 z-900"
         ref={navbarRef}
       >
-        <ul className="text-white w-full h-full lg:text-xl text-lg flex flex-col justify-evenly items-center uppercase">
-          <li>
+        <ul className="text-white w-full h-full lg:text-xl text-lg flex flex-col justify-evenly items-center uppercase mt-4">
+          <li onClick={handleNav}>
             <Link href="/" className={pathname == "/" ? "border-b py-1" : ""}>
               Home
             </Link>
           </li>
-          <li>
-            <a href="">About</a>
+          <li onClick={handleNav}>
+            <Link
+              href="/about"
+              className={pathname == "/about" ? "border-b py-1" : ""}
+            >
+              About
+            </Link>
           </li>
-          <li>
+          <li onClick={handleNav}>
             <a href="">Projects</a>
           </li>
-          <li>
+          <li onClick={handleNav}>
             <Link
               href="/blog"
               className={pathname == "/blog" ? "border-b py-1" : ""}
@@ -91,13 +107,13 @@ const Navbar = () => {
               Blog
             </Link>
           </li>
-          <li>
+          <li onClick={handleNav}>
             <a href="">Research</a>
           </li>
-          <li>
+          <li onClick={handleNav}>
             <a href="">Resume</a>
           </li>
-          <li>
+          <li onClick={handleNav}>
             <a href="">Contact</a>
           </li>
         </ul>

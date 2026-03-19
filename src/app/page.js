@@ -27,7 +27,7 @@ const page = () => {
           <div className="lg:text-[2vw] text-[5vw]">
             I'm <TypeWrite />
           </div>
-          <div className="buttons flex gap-9 mt-7">
+          <div className="buttons flex lg:gap-9 gap-4 lg:mt-7 mt-2">
             <button className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full">
               About Me
             </button>

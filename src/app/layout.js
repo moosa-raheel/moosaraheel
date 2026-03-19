@@ -14,10 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Moosa Raheel | Developer Portfolio",
+  title: "Moosa Raheel | Full Stack Developer & AI Enthusiast",
   description:
-    "Moosa Raheel is a full-stack developer, teacher, and AI enthusiast building modern web and AI applications.",
-  keywords: ["Moosa Raheel", "Developer", "Next.js", "AI", "Portfolio"],
+    "Moosa Raheel is a full-stack developer and AI enthusiast from Pakistan, specializing in Next.js, MongoDB, and modern web applications. Explore projects, blogs, and research work.",
+  keywords: [
+    "Moosa Raheel",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "MongoDB",
+    "AI Developer",
+    "Pakistan Developer",
+  ],
   authors: [{ name: "Moosa Raheel" }],
   openGraph: {
     title: "Moosa Raheel",
