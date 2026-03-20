@@ -6,9 +6,23 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const page = () => {
   const nameHeadRef = useRef();
+  const nameSubRef = useRef();
   useGSAP(() => {
     gsap.from(nameHeadRef.current, {
       x: -200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+    gsap.from(nameSubRef.current, {
+      x: 200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+    const tl = gsap.timeline();
+    tl.from(".btn", {
+      y: 50,
       opacity: 0,
       duration: 1,
       ease: "power2.out",
@@ -24,14 +38,14 @@ const page = () => {
           >
             MOOSA RAHEEL
           </h1>
-          <div className="lg:text-[2vw] text-[5vw]">
+          <div className="lg:text-[2vw] text-[5vw]" ref={nameSubRef}>
             I'm <TypeWrite />
           </div>
-          <div className="buttons flex lg:gap-9 gap-4 lg:mt-7 mt-2">
-            <button className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full">
+          <div className="buttons flex lg:gap-9 gap-4 lg:mt-7 mt-2 overflow-hidden">
+            <button className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full btn">
               About Me
             </button>
-            <button className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full">
+            <button className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full btn">
               Read Blog
             </button>
           </div>

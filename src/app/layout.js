@@ -14,9 +14,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Moosa Raheel | Full Stack Developer & AI Enthusiast",
+  metadataBase: new URL("https://moosaraheel.com"),
+
+  title: {
+    default: "Moosa Raheel | Full Stack Developer",
+    template: "%s | Moosa Raheel",
+  },
+
   description:
-    "Moosa Raheel is a full-stack developer and AI enthusiast from Pakistan, specializing in Next.js, MongoDB, and modern web applications. Explore projects, blogs, and research work.",
+    "Moosa Raheel is a full stack developer and educator specializing in Next.js, MongoDB, and AI. Explore projects, blogs, and research work.",
+
   keywords: [
     "Moosa Raheel",
     "Full Stack Developer",
@@ -25,23 +32,45 @@ export const metadata = {
     "AI Developer",
     "Pakistan Developer",
   ],
+
   authors: [{ name: "Moosa Raheel" }],
+
+  creator: "Moosa Raheel",
+
   openGraph: {
-    title: "Moosa Raheel",
-    description: "Developer, Teacher, AI Enthusiast",
+    title: "Moosa Raheel | Developer Portfolio",
+    description: "Explore projects, blogs, and AI work by Moosa Raheel.",
     url: "https://moosaraheel.com",
     siteName: "Moosa Raheel",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png", // create this
         width: 1200,
         height: 630,
+        alt: "Moosa Raheel Portfolio",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
-};
 
+  twitter: {
+    card: "summary_large_image",
+    title: "Moosa Raheel",
+    description: "Full Stack Developer & AI Enthusiast",
+    images: ["/og.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+};
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
