@@ -44,7 +44,7 @@ export const metadata = {
     siteName: "Moosa Raheel",
     images: [
       {
-        url: "/og.png", // create this
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Moosa Raheel Portfolio",
@@ -92,6 +92,24 @@ export default function RootLayout({ children }) {
   gtag('js', new Date());
 
   gtag('config', 'G-CR0RLYGVFX');`}
+        </Script>
+        <Script strategy="afterInteractive" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Moosa Raheel",
+            url: "https://moosaraheel.com",
+            sameAs: [
+              "https://www.instagram.com/moosa_thefinest",
+              "https://www.linkedin.com/in/YOUR-USERNAME",
+            ],
+            jobTitle: "Full Stack Developer",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Karachi",
+              addressCountry: "Pakistan",
+            },
+          })}
         </Script>
       </body>
     </html>

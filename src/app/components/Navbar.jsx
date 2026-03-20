@@ -36,9 +36,11 @@ const Navbar = () => {
         className="w-full h-22 fixed top-0 left-0 flex lg:px-15 px-10 justify-between items-center z-999"
         ref={navRef}
       >
-        <div className="logo lg:text-5xl text-3xl font-extrabold text-white">
-          MR
-        </div>
+        <Link href={"/"}>
+          <div className="logo lg:text-5xl text-3xl font-extrabold text-white">
+            MR
+          </div>
+        </Link>
         <ul className="text-white text-lg lg:flex gap-10 uppercase  hidden">
           <li>
             <Link href="/" className={pathname == "/" ? "border-b py-1" : ""}>
