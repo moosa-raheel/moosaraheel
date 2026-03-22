@@ -1,9 +1,9 @@
 import dbConnect from "@/app/api/lib/db";
 
 export const POST = async (req) => {
-  // Extract Values
-  // const URI = process.env.DB_URI;
-  // dbConnect(URI);
+  const URI = process.env.DB_URI;
+  dbConnect(URI);
+
   const { firstName, lastName, email, password, cPassword, tc } =
     await req.json();
 

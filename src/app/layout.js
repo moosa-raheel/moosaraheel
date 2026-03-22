@@ -101,7 +101,7 @@ export default function RootLayout({ children }) {
             url: "https://moosaraheel.com",
             sameAs: [
               "https://www.instagram.com/moosa_thefinest",
-              "https://www.linkedin.com/in/YOUR-USERNAME",
+              "https://www.linkedin.com/in/moosa-raheel-703400347/",
             ],
             jobTitle: "Full Stack Developer",
             address: {

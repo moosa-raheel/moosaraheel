@@ -3,8 +3,10 @@ import React, { useRef } from "react";
 import Header from "./components/Header";
 import TypeWrite from "./UI/Typewrite";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/navigation";
 import gsap from "gsap";
 const page = () => {
+  const router = useRouter();
   const nameHeadRef = useRef();
   const nameSubRef = useRef();
   useGSAP(() => {
@@ -42,10 +44,16 @@ const page = () => {
             I'm <TypeWrite />
           </div>
           <div className="buttons flex lg:gap-9 gap-4 lg:mt-7 mt-2 overflow-hidden">
-            <button className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full btn">
+            <button
+              className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full btn cursor-pointer"
+              onClick={() => router.push("/about")}
+            >
               About Me
             </button>
-            <button className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full btn">
+            <button
+              className="border md:px-12 sm:px-8 px-6  md:py-3  py-2 rounded-full btn cursor-pointer"
+              onClick={() => router.push("/blog")}
+            >
               Read Blog
             </button>
           </div>

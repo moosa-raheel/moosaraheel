@@ -73,7 +73,12 @@ const Navbar = () => {
             <a href="">Resume</a>
           </li>
           <li>
-            <a href="">Contact</a>
+            <Link
+              href="/contact"
+              className={pathname == "/contact" ? "border-b py-1" : ""}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
         <div className="lg:hidden text-white lg:text-5xl text-3xl relative z-999">
@@ -81,10 +86,10 @@ const Navbar = () => {
         </div>
       </nav>
       <div
-        className="navbar w-full h-screen bg-black fixed top-0 left-full lg:hidden  transition-all duration-500 z-900"
+        className="navbar w-full h-screen bg-black fixed top-0 left-full lg:hidden  transition-all duration-500 z-900 flex items-center"
         ref={navbarRef}
       >
-        <ul className="text-white w-full h-full lg:text-xl text-lg flex flex-col justify-evenly items-center uppercase mt-4">
+        <ul className="text-white w-full h-[60%] lg:text-xl text-lg flex flex-col justify-between items-center uppercase">
           <li onClick={handleNav}>
             <Link href="/" className={pathname == "/" ? "border-b py-1" : ""}>
               Home
@@ -116,7 +121,12 @@ const Navbar = () => {
             <a href="">Resume</a>
           </li>
           <li onClick={handleNav}>
-            <a href="">Contact</a>
+            <Link
+              href="/contact"
+              className={pathname == "/contact" ? "border-b py-1" : ""}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
